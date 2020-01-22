@@ -36,5 +36,10 @@ public class WhiskyTrackerApplicationTests {
 		List<Distillery> found = distilleryRepository.findDistilleryByRegion("Lowland");
 		assertEquals("Rosebank", found.get(0).getName());
 	}
+	@Test
+	public void canFindWhiskyThatHasDistilleryAndYear() {
+		List<Whisky> found = whiskyRepository.findWhiskyThatHasDistilleryAndYear("Glendronach", 2018);
+		assertEquals("The Glendronach Revival", found.get(0).getName());
+	}
 
 }
